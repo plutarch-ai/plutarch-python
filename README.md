@@ -25,11 +25,11 @@ chat.id
 chat.add_message({"role": "user", "content": "What's the weather today?"})
 chat.add_message({"role": "assistant", "content": "Where are you located?"})
 chat.add_message({"role": "user", "content": "I'm in Paris"})
-chat.add_message({"role": "assistant", "content": "Today we expect clear skyes with highs of 22c and lows of 15c"})
+chat.add_message({"role": "assistant", "content": "Today we expect clear skies with highs of 22c and lows of 15c"})
 
 # Get context for next user prompt
-chat.get_context({"role": "user", "prompt": "What about next sunday?"})
-> {'chat_id': '30d201cb-9e49-49ab-abfc-f8c66a118b42', 'prompt': 'What about next sunday?', 'context': 'The user is asking about the weather for next Sunday.'}
+chat.get_context({"role": "user", "prompt": "What about next Sunday?"})
+> {'chat_id': '30d201cb-9e49-49ab-abfc-f8c66a118b42', 'prompt': 'What about next Sunday?', 'context': 'The user is asking about the weather for next Sunday.'}
 
 # Delete chat with all its messages from Plutarch
 chat.delete()
