@@ -52,3 +52,8 @@ def test_delete_chat(mocker):
         'https://api.plutarch.ai/chat/test_chat_id',
         headers={"Authorization": 'test_api_key'},
     )
+
+def test_load_chat(mocker):
+    loaded_chat = plutarch.load_chat("test_chat_id")
+
+    assert loaded_chat.chat_id == "test_chat_id"

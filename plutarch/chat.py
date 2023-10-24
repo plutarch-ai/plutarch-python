@@ -44,3 +44,6 @@ def create_chat():
     response.raise_for_status()
     chat_id = response.json()["id"]
     return Chat(chat_id)
+
+def load_chat(chat_id):
+    return Chat(chat_id)
