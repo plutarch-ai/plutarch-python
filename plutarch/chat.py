@@ -10,11 +10,11 @@ if API_KEY is None:
 
 class Chat:
     def __init__(self, chat_id):
-        self.chat_id = chat_id
+        self.id = chat_id
 
     def add_message(self, message: Dict[str, str]):
         response = requests.post(
-            f"{BASE_URL}/chat/{self.chat_id}/messages",
+            f"{BASE_URL}/chat/{self.id}/messages",
             headers={"Authorization": API_KEY},
             json=message,
         )
@@ -22,7 +22,7 @@ class Chat:
 
     def get_context(self, prompt: Dict[str, str]):
         response = requests.post(
-            f"{BASE_URL}/chat/{self.chat_id}/get_context",
+            f"{BASE_URL}/chat/{self.id}/get_context",
             headers={"Authorization": API_KEY},
             json=prompt,
         )
@@ -31,7 +31,7 @@ class Chat:
     
     def delete(self):
         response = requests.delete(
-            f"{BASE_URL}/chat/{self.chat_id}",
+            f"{BASE_URL}/chat/{self.id}",
             headers={"Authorization": API_KEY},
         )
         response.raise_for_status()
